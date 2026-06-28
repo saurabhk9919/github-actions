@@ -1,1 +1,17 @@
+name: Secrets Demo
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print a normal message
+        run: echo "Using GitHub Secrets"
+
+      - name: Use Secret
+        run: echo "Hello ${{ secrets.MY_KEY }}"
